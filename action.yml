@@ -50,8 +50,4 @@ runs:
       shell : bash
       run : |
           chmod 744 ./entrypoint.sh
-          bash ./entrypoint.sh
-          
-    
-  
- 
+          bash ./entrypoint.sh ${{ inputs.owner }} ${{ inputs.repo }} ${{ inputs.github_token }} ${{ inputs.workflow_file_name }}
