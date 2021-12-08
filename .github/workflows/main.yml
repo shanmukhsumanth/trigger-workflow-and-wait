@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     name: Run Web App
+    
     runs-on: ubuntu-latest
     steps:
       - name: Build Web App
@@ -13,6 +14,10 @@ jobs:
           echo "Build Web App"
           sleep 10s
           
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+  
+      - name: test
       - uses: ./
         with:
           owner: shanmukhsumanth
