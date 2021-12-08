@@ -44,5 +44,14 @@ outputs:
   workflow_url:
     description: The URL of the workflow that was triggered by this action
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+  steps:
+    - name: Trigger
+      shell : bash
+      run : |
+          chmod 744 ./entrypoint.sh
+          bash ./entrypoint.sh
+          
+    
+  
+ 
